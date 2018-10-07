@@ -45,7 +45,7 @@
 		<!-- Navbar Search -->
 		<form
 			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-			<div class="input-group">
+			<!-- <div class="input-group">
 				<input type="text" class="form-control" placeholder="Search for..."
 					aria-label="Search" aria-describedby="basic-addon2">
 				<div class="input-group-append">
@@ -53,7 +53,7 @@
 						<i class="fas fa-search"></i>
 					</button>
 				</div>
-			</div>
+			</div> -->
 		</form>
 
 		<!-- Navbar -->
@@ -90,9 +90,9 @@
 				class="nav-link"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Actualité</span>
 			</a></li>
 			<li class="nav-item dropdown" id="li_events"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-fw fa-folder"></i> <span>Events</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-fw fa-folder"></i> <span>Events</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
@@ -129,7 +129,8 @@
 			<div id="matter4" style="display: none">
 				<jsp:include page="accessoires.jsp" />
 			</div>
-			<div id="matter5" style="display: none"></div>
+			<div id="matter5" style="display: none">
+			</div>
 
 
 			<!-- Area Chart Example-->
@@ -196,8 +197,8 @@
 	<!-- Demo scripts for this page-->
 	<script src="js/demo/datatables-demo.js"></script>
 	<script src="js/demo/chart-area-demo.js"></script>
-	
-	
+
+
 	<script src="js/acceuil.js"></script>
 </body>
 

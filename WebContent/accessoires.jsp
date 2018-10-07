@@ -1,19 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link href="css/accessoires.css" rel="stylesheet">
+
+<script src="js/jquery.min.js"></script>
 <script src="js/accessoires.js"></script>
+<link rel="stylesheet" type="text/css" href="css/accessoires.css">
 <div>
-	<div id="searchBox">
-		<input type="text" id="itemKey"></input> 
-		<input type="button" id="btnKey" onclick="submitKey()" value="Search"></input>
+	<div class="input-group">
+		<input type="text" class="form-control" id="itemKey"
+			placeholder="Search for..." aria-label="Search"
+			aria-describedby="basic-addon2">
+		<div class="input-group-append">
+			<button class="btn btn-primary" type="button" onclick="submitKey()">
+				<i class="fas fa-search"></i>
+			</button>
+		</div>
 	</div>
-	<div id="resultTable">
+	<div id="loading"></div>
+	<div>
 		<table width="80%">
 			<thead id="th">
 			</thead>
-			<tbody id="tb">
-			</tbody>
+			<tbody id="tb"></tbody>
 		</table>
 	</div>
+	<div id="page_bar"></div>
+
 </div>
 

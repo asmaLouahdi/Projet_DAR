@@ -85,10 +85,15 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   z-index: 1;
 }
 
-.navbar-nav .form-inline .input-group {
+/* .navbar-nav .form-inline .input-group {
   width: 100%;
 }
+ */
 
+.input-group {
+  width: 100%;
+}
+ 
 .navbar-nav .nav-item.active .nav-link {
   color: #fff;
 }

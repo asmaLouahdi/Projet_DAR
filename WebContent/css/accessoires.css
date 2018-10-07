@@ -1,26 +1,35 @@
 @CHARSET "UTF-8";
 
-#searchBox {
-	margin-left: 420px;
+.input-group {
+	width: 30%;
+	margin: 0 auto;
+}
+
+#page_bar {
+	text-align: center;
+	height: 40px;
+	margin: 30px auto;
+	color: rgba(10, 86, 224, 1);
 }
 
 table {
 	border-collapse: collapse;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
 	text-align: center;
 }
 
-table td, table th {
+table tr, table td {
 	border: 1px solid #cad9ea;
 	color: #666;
-	height: 30px;
 }
 
-table thead th {
-	background-color: #CCE8EB;
-	width: 100px;
-}
-
+ 
 table tr:nth-child(even) {
 	background: #F5FAFA;
+}
+
+span {
+	margin: 15px;
 }

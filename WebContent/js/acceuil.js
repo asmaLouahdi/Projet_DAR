@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
   
     function openMatter(obj) {
-        for (var i = 1; i < 5; i++) {
+        for (var i = 1; i < 6; i++) {
             if (i == obj) {
                 temp = "block";
             } else {
