@@ -1,34 +1,42 @@
 $(document).ready(function() {
-    var temp = "none";
 
-    $("#li_actualite").click(function () {
-        openMatter(1);
-    });
-    $("#li_events").click(function () {
-        openMatter(2);
-    });
-    $("#li_publications").click(function () {
-        openMatter(3);
-    });
-    $("#li_accessoires").click(function () {
-        openMatter(4);
-    });
-    $("#li_think").click(function () {
-        openMatter(5);
-    });
-  
-    function openMatter(obj) {
-        for (var i = 1; i < 6; i++) {
-            if (i == obj) {
-                temp = "block";
-            } else {
-                temp = "none";
-            }
-            document.getElementById("matter" + i).style.display = temp;
+			window.setInterval(function() {
+						setCount();
+					}, 500);
 
-        }
-    }
-});
+			function setCount() {
 
+				$.ajax({
+							"url" : "MessageServlet",
+							"type" : "post",
+							"data" : {
+								"action" : "getCountNoRead",
+								"user_id" : $("#user_id").val()
+							},
+							"dataType" : "text",
+							"success" : function(data) {
+								$("#msg_count").text(data);
+							}
+						});
 
+			}
+			var obj = document.getElementById("iframe");
 
+			$("#li_actualite").click(function() {
+					});
+			$("#li_events").click(function() {
+					});
+			$("#li_publications").click(function() {
+					});
+			$("#li_accessoires").click(function() {
+						obj.src = "accessoires.jsp";
+					});
+			$("#li_think").click(function() {
+				
+					});
+			$("#li_messages").click(function() {
+						obj.src = "message.jsp";
+
+					});
+
+		})
