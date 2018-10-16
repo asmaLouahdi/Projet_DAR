@@ -1,6 +1,6 @@
 function submitKey() {
 	$.ajax({
-				"url" : "AccessoiresServlet",
+				"url" : "accessoires",
 				"type" : "post",
 				"data" : {
 					"action" : "search",
@@ -23,7 +23,7 @@ function submitKey() {
 									+ item.photo + '"></image>'
 									+ '</td><td><a target= "_blank"'
 									+ ' href="' + item.info + '">' + item.titre
-									+ '</a></td><tr>');
+									+ '</a></td>'+'<td>'+item.price+'</td></tr>');
 
 						}
 					} else {

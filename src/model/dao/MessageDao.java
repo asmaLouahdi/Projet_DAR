@@ -77,6 +77,18 @@ public class MessageDao {
 		return list;
 
 	}
+	public List<Message> getAllNewMessages(int id) {
+
+		Session session = HibernateUtil.openSession();
+		Transaction transaction = session.beginTransaction();
+		Query q = session.createQuery("from Message as msg where msg.id_user_destination = :id_user_destination and msg.state = 0 order by date desc ")
+				.setParameter("id_user_destination",id);
+		List<Message> list = q.list();
+		session.close();
+		transaction.commit();
+		return list;
+
+	}
 	
 	public int getDepartureUserId(Long id){
 		Session session = HibernateUtil.openSession();

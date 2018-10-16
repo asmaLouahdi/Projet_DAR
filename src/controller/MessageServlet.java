@@ -27,7 +27,7 @@ import model.bo.Message;
 import model.dao.MessageDao;
 import model.dao.UtilisateurDao;
 
-@WebServlet("/MessageServlet")
+//@WebServlet("/MessageServlet")
 public class MessageServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -46,10 +46,11 @@ public class MessageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("message servlet");
 		messageDao = new MessageDao();
 		String action = request.getParameter("action");
 		switch (action) {
-		//add a message 
+		// add a message
 		case "add_message": {
 
 			String content = request.getParameter("content");
@@ -63,7 +64,7 @@ public class MessageServlet extends HttpServlet {
 			break;
 
 		}
-		//delete a message according to id
+		// delete a message according to id
 		case "delete": {
 
 			Long id = Long.parseLong(request.getParameter("msg_id"));
@@ -74,19 +75,44 @@ public class MessageServlet extends HttpServlet {
 			break;
 
 		}
-		//show all messages for the login user(send and receive)
+		// show all messages for the login user(send and receive)
 		case "display_all": {
 
 			response.setContentType("application/json;charset=UTF-8");
 			String user_id = request.getParameter("user_id");
 			messageDao.updateMessageState(Integer.parseInt(user_id));
 			PrintWriter out = response.getWriter();
-			out.println(getAllMessages(Integer.parseInt(user_id)));
-			getAllMessages(Integer.parseInt(user_id));
+			out.println(getAllMessages(Integer.parseInt(user_id)).toString());
 			break;
 
 		}
-		//get the id of user_departure for reply this user
+		case "display_send":{
+			System.out.println("send message");
+			response.setContentType("application/json;charset=UTF-8");
+			String user_id = request.getParameter("user_id");
+			PrintWriter out = response.getWriter();
+			out.println(getSendMessages(Integer.parseInt(user_id)).toString());
+			break;		
+		}
+		case "display_receive":{
+			System.out.println("receive message");
+			response.setContentType("application/json;charset=UTF-8");
+			String user_id = request.getParameter("user_id");
+			messageDao.updateMessageState(Integer.parseInt(user_id));
+			PrintWriter out = response.getWriter();
+			out.println(getReceiveMessages(Integer.parseInt(user_id)).toString());
+			break;	
+		}
+		case "newMessages":{
+			System.out.println("new message");
+			response.setContentType("application/json;charset=UTF-8");
+			String user_id = request.getParameter("user_id");
+//			messageDao.updateMessageState(Integer.parseInt(user_id));
+			PrintWriter out = response.getWriter();
+			out.println(getNewMessages(Integer.parseInt(user_id)).toString());
+			break;	
+		}
+		// get the id of user_departure for reply this user
 		case "getDeparture": {
 
 			Long id = Long.parseLong(request.getParameter("msg_id"));
@@ -96,7 +122,7 @@ public class MessageServlet extends HttpServlet {
 			out.println(dest_id);
 			break;
 		}
-        //get the number of the new messages
+		// get the number of the new messages
 		case "getCountNoRead": {
 
 			String user_id = request.getParameter("user_id");
@@ -108,9 +134,30 @@ public class MessageServlet extends HttpServlet {
 		}
 	}
 	
-	//convert data(list of messages) to json
-	public String getAllMessages(int id) {
-    
+	
+	public JSONArray getNewMessages(int id) {
+
+		List<Message> receive_messages = messageDao.getAllNewMessages(id);
+		List<String> userDepartNames = new ArrayList<String>();
+		UtilisateurDao utilisateurDao = new UtilisateurDao();
+		for (Message message : receive_messages) {
+			userDepartNames.add(utilisateurDao.getNameByUserId(message.getId_user_departure()));
+		}
+
+		JSONArray jsonReceiveArray = new JSONArray(receive_messages);
+		for (int i = 0; i < jsonReceiveArray.length(); i++) {
+			JSONObject json = new JSONObject();
+			json = jsonReceiveArray.getJSONObject(i);
+			json.put("id_user_departure", userDepartNames.get(i));
+		}
+
+//		String jsonStr = jsonReceiveArray.toString();
+		return jsonReceiveArray;
+
+	}
+
+	public JSONArray getReceiveMessages(int id) {
+
 		List<Message> receive_messages = messageDao.getAllMessagesByDestinationId(id);
 		List<String> userDepartNames = new ArrayList<String>();
 		UtilisateurDao utilisateurDao = new UtilisateurDao();
@@ -125,6 +172,14 @@ public class MessageServlet extends HttpServlet {
 			json.put("id_user_departure", userDepartNames.get(i));
 		}
 
+//		String jsonStr = jsonReceiveArray.toString();
+		return jsonReceiveArray;
+
+	}
+	
+
+	public JSONArray getSendMessages(int id) {
+		UtilisateurDao utilisateurDao = new UtilisateurDao();
 		List<Message> send_messages = messageDao.getAllMessagesByDepartureId(id);
 		List<String> userDestNames = new ArrayList<String>();
 		for (Message message : send_messages) {
@@ -138,19 +193,54 @@ public class MessageServlet extends HttpServlet {
 			json.put("id_user_destination", userDestNames.get(i));
 		}
 
+//		String jsonStr = jsonSendArray.toString();
+		return jsonSendArray;
+
+	}
+
+	// convert data(list of messages) to json
+	public JSONArray getAllMessages(int id) {
+//
+//		List<Message> receive_messages = messageDao.getAllMessagesByDestinationId(id);
+//		List<String> userDepartNames = new ArrayList<String>();
+//		UtilisateurDao utilisateurDao = new UtilisateurDao();
+//		for (Message message : receive_messages) {
+//			userDepartNames.add(utilisateurDao.getNameByUserId(message.getId_user_departure()));
+//		}
+//
+//		JSONArray jsonReceiveArray = new JSONArray(receive_messages);
+//		for (int i = 0; i < jsonReceiveArray.length(); i++) {
+//			JSONObject json = new JSONObject();
+//			json = jsonReceiveArray.getJSONObject(i);
+//			json.put("id_user_departure", userDepartNames.get(i));
+//		}
+//
+//		List<Message> send_messages = messageDao.getAllMessagesByDepartureId(id);
+//		List<String> userDestNames = new ArrayList<String>();
+//		for (Message message : send_messages) {
+//			userDestNames.add(utilisateurDao.getNameByUserId(message.getId_user_destination()));
+//		}
+//
+//		JSONArray jsonSendArray = new JSONArray(send_messages);
+//		for (int i = 0; i < jsonSendArray.length(); i++) {
+//			JSONObject json = new JSONObject();
+//			json = jsonSendArray.getJSONObject(i);
+//			json.put("id_user_destination", userDestNames.get(i));
+//		}
+
 		JSONObject typeSend = new JSONObject();
 		typeSend.put("type", "send");
-		typeSend.put("list", jsonSendArray);
+		typeSend.put("list", getSendMessages(id));
 		JSONObject typeReceive = new JSONObject();
 		typeReceive.put("type", "receive");
-		typeReceive.put("list", jsonReceiveArray);
+		typeReceive.put("list", getReceiveMessages(id));
 
 		JSONArray jsonArray = new JSONArray();
 		jsonArray.put(0, typeSend);
 		jsonArray.put(1, typeReceive);
 
-		String jsonStr = jsonArray.toString();
-		return jsonStr;
+//		String jsonStr = jsonArray.toString();
+		return jsonArray;
 
 	}
 

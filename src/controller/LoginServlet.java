@@ -38,11 +38,13 @@ public class LoginServlet extends HttpServlet {
      UtilisateurDao utildao = new UtilisateurDao();
      Utilisateur user = utildao.getUserByUserId(email,password);
      if(user == null) {
-    	 RequestDispatcher dispatcher = request.getRequestDispatcher("/hello.jsp");
+    	 RequestDispatcher dispatcher = request.getRequestDispatcher("/erreur.jsp");
     	 dispatcher.forward(request, response);
      }else {
-    	 request.setAttribute(CHAMP_EMAIL, email); 		
-    	 RequestDispatcher dispatcher = request.getRequestDispatcher("/accueil.jsp");
+    	 request.setAttribute(CHAMP_EMAIL, email); 	
+    	 request.setAttribute("name", user.getName()); 	
+
+    	 RequestDispatcher dispatcher = request.getRequestDispatcher("/test.jsp");
  		dispatcher.forward(request, response);
      }
     

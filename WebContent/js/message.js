@@ -1,5 +1,5 @@
 $.ajax({
-			"url" : "MessageServlet",
+			"url" : "message",
 			"type" : "post",
 			"data" : {
 				"action" : "display_all",
@@ -58,7 +58,7 @@ $.ajax({
 
 function clickAdd(span) {
 	$.ajax({
-				"url" : "MessageServlet",
+				"url" : "message",
 				"type" : "post",
 				"data" : {
 					"msg_id" : span.id,
@@ -76,7 +76,7 @@ function clickAdd(span) {
 
 function clickDelete(span) {
 	$.ajax({
-				"url" : "MessageServlet",
+				"url" : "message",
 				"type" : "post",
 				"data" : {
 					"msg_id" : span.id,

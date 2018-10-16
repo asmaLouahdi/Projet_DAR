@@ -23,7 +23,7 @@ import com.ebay.services.finding.SearchItem;
 /**
  * Servlet implementation class searchServlet
  */
-@WebServlet("/AccessoiresServlet")
+//@WebServlet("/AccessoiresServlet")
 public class AccessoiresServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -46,6 +46,7 @@ public class AccessoiresServlet extends HttpServlet {
 				jsonObject.put("titre", item.getTitle());
 				jsonObject.put("photo", item.getGalleryURL());
 				jsonObject.put("info", item.getViewItemURL());
+				jsonObject.put("price", "US $"+item.getSellingStatus().getConvertedCurrentPrice().getValue());
 				jsonArray.put(jsonObject);
 			}
 

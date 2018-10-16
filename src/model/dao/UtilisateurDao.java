@@ -4,6 +4,7 @@ package model.dao;
 	import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.json.JSONObject;
 
 import model.bo.Utilisateur;
 import utils.HibernateUtil;
@@ -11,16 +12,20 @@ import utils.HibernateUtil;
 	public class UtilisateurDao {
 	
 	
-	public boolean saveDetails(String name, String email,String password, String mark, String comment_site){
+	public boolean saveDetails(String name, String email,String password, String about,String interest, String occupation, String numberphone){
 	{
 	    boolean flag=true;
 	      Session session = HibernateUtil.openSession();
 	      Utilisateur utilisateur=new Utilisateur();
 	        utilisateur.setName(name);
 	        utilisateur.setEmail(email);
-	        utilisateur.setMark(mark);
 	        utilisateur.setPassword(password);
-	        utilisateur.setComment_site(comment_site);
+	        utilisateur.setAbout(about);
+	        utilisateur.setInterest(interest);
+	        utilisateur.setOccupation(occupation);
+	        utilisateur.setNumberphone(numberphone);
+	        
+	        
 	     
 	      Transaction transaction=session.beginTransaction();
 	      try
@@ -37,6 +42,8 @@ import utils.HibernateUtil;
 	      return flag;
 	      }
 	}
+	
+	
 	public Utilisateur getUserByUserId(String email, String password) {
         Session session = HibernateUtil.openSession();
         Transaction tx = null;
