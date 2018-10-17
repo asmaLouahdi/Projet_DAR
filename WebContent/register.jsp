@@ -59,8 +59,8 @@
 							<div class="col-md-6">
 								<div class="form-label-group">
 									<input type="password" name="password" id="inputPassword"
-										class="form-control" placeholder="Password"
-										required="required"> <label for="inputPassword">Password</label>
+										class="form-control" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=""
+										required="required"> <label for="inputPassword">Password (maj,min,number/char spec,8char)</label>
 								</div>
 							</div>
 							

@@ -77,5 +77,10 @@
 			<artifactId>org.apache.log4j</artifactId>
 			<version>1.2.15.v201012070815</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 </project>

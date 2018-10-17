@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
@@ -31,7 +30,6 @@
 
 <!-- Custom styles for this template-->
 <link href="css/sb-admin.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -45,7 +43,7 @@
 		<!-- Navbar Search -->
 		<form
 			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-			<div class="input-group">
+			<!-- <div class="input-group">
 				<input type="text" class="form-control" placeholder="Search for..."
 					aria-label="Search" aria-describedby="basic-addon2">
 				<div class="input-group-append">
@@ -53,11 +51,23 @@
 						<i class="fas fa-search"></i>
 					</button>
 				</div>
-			</div>
+			</div> -->
 		</form>
 
 		<!-- Navbar -->
 		<ul class="navbar-nav ml-auto ml-md-0">
+			<!-- <li id="li_messages"><button ></button> <span class="badge badge-danger">0</span>
+			</li> -->
+			<!-- 	<li id="li_messages" class="nav-item dropdown no-arrow mx-1"><a
+				 id="messageDropdown" role="button"
+				data-toggle="dropdown" >
+					<i class="fas fa-bell fa-fw"></i> <span id = "msg_count" class="badge badge-danger">0</span>
+			</a></li> -->
+			<li id="li_messages" class="nav-item dropdown no-arrow mx-1"><a
+				class="nav-link " role="button" aria-haspopup="true"
+				aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i> <span
+					id="msg_count" class="badge badge-danger">0</span>
+			</a></li>
 			<li class="nav-item dropdown no-arrow mx-1"><a
 				class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -90,9 +100,9 @@
 				class="nav-link"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Actualité</span>
 			</a></li>
 			<li class="nav-item dropdown" id="li_events"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-fw fa-folder"></i> <span>Events</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-fw fa-folder"></i> <span>Events</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
@@ -115,11 +125,17 @@
 						think</span></a></li>
 		</ul>
 
+		<input id="user_id" value="3" style="display: none"></input> <input
+			id="contact_id" value="1" style="display: none"></input>
+
+
+
 		<div id="content-wrapper">
+			<iframe id="iframe" frameborder="0" width="100%" height="800"></iframe>
 			<!-- <p class="small text-center text-muted my-5">
             <em>More actualities coming soon...</em>
-          </p> -->
-			<div id="matter1">
+          </p> 
+	<%-- 		<div id="matter1">
 				<p class="small text-center text-muted my-5">
 					<em>More actualities coming soon...</em>
 				</p>
@@ -130,7 +146,12 @@
 				<jsp:include page="accessoires.jsp" />
 			</div>
 			<div id="matter5" style="display: none"></div>
-
+			<div id="matter6" style="display: none">
+				<jsp:include page="message.jsp" />
+			</div>
+			<div id="matter7" style="display: none"></div>
+			<div id="matter8" style="display: none"></div>
+			<div id="matter9" style="display: none"></div> --%>
 
 			<!-- Area Chart Example-->
 
@@ -196,8 +217,8 @@
 	<!-- Demo scripts for this page-->
 	<script src="js/demo/datatables-demo.js"></script>
 	<script src="js/demo/chart-area-demo.js"></script>
-	
-	
+
+
 	<script src="js/acceuil.js"></script>
 </body>
 
