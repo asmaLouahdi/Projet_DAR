@@ -60,6 +60,7 @@
 	<% user=(Utilisateur)request.getAttribute("user");%>
 										<div >
 											
+
 											<label class="col-md-2 control-label">Name: <span
 												class="required"> * </span>
 											</label>

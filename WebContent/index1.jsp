@@ -208,7 +208,7 @@
 						<div>
 							<i class="fa fa-map-marker"></i>
 							<p>
-								4 Place Jussieu<br>Sorbonne Université, 75005
+								4 Place Jussieu<br>Sorbonne Universitï¿½, 75005
 							</p>
 						</div>
 
