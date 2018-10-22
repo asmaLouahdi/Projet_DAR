@@ -10,5 +10,8 @@
         <property name="show_sql">true</property>      
         <property name="hbm2ddl.auto">update</property>
         <mapping class="model.bo.Utilisateur" />
+        <mapping class="model.bo.Comment" />
+        <mapping class="model.bo.Avatar" />
+        
     </session-factory>
 </hibernate-configuration>
