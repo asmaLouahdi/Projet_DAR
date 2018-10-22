@@ -39,8 +39,9 @@
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
-                <label for="password">Password</label>
+              
+                <input type="password"  name="password" id="password" class="form-control" placeholder="Uper,lower number/special char 8 char" required="required">
+                <label for="password">Password </label>
               </div>
             </div>
             <div class="form-group">

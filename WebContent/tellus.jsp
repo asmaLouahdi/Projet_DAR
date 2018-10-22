@@ -56,17 +56,17 @@
 							<div  id="tab_general">
 								<div class="form-body">
 									<form method="POST" action="comment">
+									<%!Utilisateur user=null; %>
+	<% user=(Utilisateur)request.getAttribute("user");%>
 										<div >
-											<%!String name = null;%>
-											<%
-												name = (String) request.getAttribute("name");
-											%>
+											
+
 											<label class="col-md-2 control-label">Name: <span
 												class="required"> * </span>
 											</label>
 											<div class="col-md-10">
-												<input class="form-control" name="name" value="<%=name%>"
-													placeholder="" disabled />
+												<input class="form-control" name="name" value=""
+													placeholder=""  />
 											</div>
 										</div>
 
