@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+#search {
+	width: 250px;
+	margin: 0 auto;
+}
+
+table {
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	width:"80%";
+}
+
+table tr, table td {
+	border: 1px solid #cad9ea;
+	color: #666;
+}
+
+table tr:nth-child(even) {
+	background: #F5FAFA;
+}
+
+span {
+	margin: 15px;
+}
+
+#loading {
+	margin: 25px auto;
+	width: 150px;
+	height: 60px;
+}
+
+#result {
+	margin: 100px auto;
+	width: 300px;
+	font-size: 18px;
+	text-align:center
+}
