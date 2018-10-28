@@ -3,11 +3,14 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/accessoires.js"></script>
+
+<script src="js/pagination.js"></script>
 <script type="text/javascript" src="/js/spin.min.js"></script>
 
 <script src="https://cdn.bootcss.com/spin.js/2.3.2/spin.min.js"></script>
-
+<link rel="stylesheet" href="js/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/accessoires.css">
+<link rel="stylesheet" type="text/css" href="css/pagination.css">
 <!-- Bootstrap core CSS-->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,16 +38,16 @@
 			</div>
 		</div>
 	</div>
-	<div id="result">
-	</div>
+	<div id="result"></div>
 	<div>
-		<table>
-			<thead id="th">
+		<table id="customers">
+			<thead id="th" >
 			</thead>
 			<tbody id="tb"></tbody>
 		</table>
 	</div>
-	<div id="loading" ></div>
+	<div id="pagination" class="pagination"></div>
+	<div id="loading"></div>
 
 </div>
 

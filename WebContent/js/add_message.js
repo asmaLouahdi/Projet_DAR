@@ -14,7 +14,7 @@ function addMsg() {
 				"success" : function(data) {
 					var obj = window.parent.document.getElementById("iframe");
 					// obj.src = "message.jsp";
-					obj.src = "inbox.jsp";
+					obj.src = "message.jsp";
 
 				}
 			});

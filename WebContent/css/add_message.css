@@ -11,7 +11,7 @@
 }
 
 #msg_content {
-	border: 2px solid rgb(15, 121, 172);
+	border: 2px solid rgb(25,138,241);;
 	height: 260px;
 	width: 100%;
 	font-size: 26px;
@@ -23,7 +23,7 @@
 }
 
 .button {
-	background-color: rgb(15, 121, 172);
+	background-color: rgb(25,138,241);
 	border: none;
 	color: white;
 	padding: 15px 15px;

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -148,6 +149,8 @@ public class MessageServlet extends HttpServlet {
 		for (int i = 0; i < jsonReceiveArray.length(); i++) {
 			JSONObject json = new JSONObject();
 			json = jsonReceiveArray.getJSONObject(i);
+			String date = json.getString("date");
+			json.put("date", date.substring(0, date.length()-2));
 			json.put("id_user_departure", userDepartNames.get(i));
 		}
 
@@ -166,13 +169,18 @@ public class MessageServlet extends HttpServlet {
 		}
 
 		JSONArray jsonReceiveArray = new JSONArray(receive_messages);
+
+
 		for (int i = 0; i < jsonReceiveArray.length(); i++) {
 			JSONObject json = new JSONObject();
 			json = jsonReceiveArray.getJSONObject(i);
+			String date = json.getString("date");
+			json.put("date", date.substring(0, date.length()-2));			
 			json.put("id_user_departure", userDepartNames.get(i));
 		}
 
 //		String jsonStr = jsonReceiveArray.toString();
+		System.out.println(jsonReceiveArray.toString());
 		return jsonReceiveArray;
 
 	}
@@ -191,6 +199,8 @@ public class MessageServlet extends HttpServlet {
 			JSONObject json = new JSONObject();
 			json = jsonSendArray.getJSONObject(i);
 			json.put("id_user_destination", userDestNames.get(i));
+			String date = json.getString("date");
+			json.put("date", date.substring(0, date.length()-2));
 		}
 
 //		String jsonStr = jsonSendArray.toString();
