@@ -2,8 +2,11 @@ package model.bo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +27,13 @@ public class Utilisateur {
 	private String about;
 	private String Occupation;
 	private String interest;
-
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "AVATAR_ID", nullable = true)
+	private Avatar avatar;
+	
+	
+	
 	public String getInterest() {
 		return interest;
 	}
@@ -95,4 +104,13 @@ public class Utilisateur {
 		this.numberphone = numberphone;
 	}
 
+	public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
 }
+

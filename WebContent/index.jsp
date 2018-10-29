@@ -15,9 +15,7 @@
                 <label for="name">Name <span class="requis">*</span></label>
                 <input type="name" id="name" name="name" value="" size="20" maxlength="60" />
                 <br />
-                <label for="mark">Mark <span class="requis">*</span></label>
-                <input type="mark" id="mark" name="mark" value="" size="20" maxlength="60" />
-                <br />
+               
                  <label for="password">Password <span class="requis">*</span></label>
                 <input type="password" id="password" name="password" value="" size="20" maxlength="60" />
                 <br />
@@ -25,9 +23,7 @@
                  <label for="email">email <span class="requis">*</span></label>
                 <input type="email" id="email" name="email" value="" size="20" maxlength="60" />
                 <br />
-                 <label for="comment_site">Comments <span class="requis">*</span></label>
-                <input type="comment_site" id="comment_site" name="comment_site" value="" size="20" maxlength="60" />
-                <br />
+                
                 <input type="submit" value="user" class="sansLabel" />
                 
 </body>
