@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-			 window.setInterval(function() {
-			 setCount();
-			 }, 500);
+//			 window.setInterval(function() {
+//			 setCount();
+//			 }, 500);
 
 			function setCount() {
                 
@@ -32,14 +32,15 @@ $(document).ready(function() {
 						obj.src = "publications.jsp";
 					});
 			$("#li_accessoires").click(function() {
-						obj.src = "accessoires.jsp";
+//						obj.src = "accessoires.jsp";
+					obj.src = "accessoires.jsp";
 					});
 			$("#li_comment").click(function() {
 						obj.src = "tellus.jsp";
 					});
 			$("#li_messages").click(function() {
-//						obj.src = "message.jsp";
-				obj.src = "inbox.jsp";
+						obj.src = "message.jsp";
+//				obj.src = "inbox.jsp";
 
 					});
 			$("#li_aboutUs").click(function() {

@@ -166,10 +166,10 @@
 							</div>
 						</form> <!-- END RESPONSIVE QUICK SEARCH FORM -->
 					</li>
-					<li id="li_actualite" class="start "><a href=""> <i
+					<li id="li_actualite" class="start "><a href="javascript:;"> <i
 							class="icon-home"></i> <span class="title">Actualité</span> <span></span>
 					</a></li>
-					<li id="li_events"><a href=""> <i class="icon-basket"></i>
+					<li id="li_events"><a href="javascript:;"> <i class="icon-basket"></i>
 							<span class="title">Events</span> <span class="arrow "></span>
 					</a>
 						<ul class="sub-menu">
@@ -209,12 +209,12 @@
 		</div>
 		<!-- END SIDEBAR -->
 		<!-- BEGIN CONTENT -->
-		<input id="user_id" value="3" style="display: none"></input> <input
-			id="contact_id" value="1" style="display: none"></input>
+		<input id="user_id" value="3" style="display: none"></input> 
+		<input id="contact_id" value="1" style="display: none"></input>
 
 		<div class="page-content-wrapper">
 			<div class="page-content">
-				<iframe id="iframe" frameborder="0" width="100%"
+				<iframe id="iframe" frameborder="0" width="100%" 
 					height="800"></iframe>
 
 				<!-- END PAGE CONTENT-->

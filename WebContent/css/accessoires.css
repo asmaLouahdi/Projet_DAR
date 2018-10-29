@@ -5,23 +5,28 @@
 	margin: 0 auto;
 }
 
-table {
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: center;
-	width:"80%";
+#customers {
+	margin: 20px auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-table tr, table td {
-	border: 1px solid #cad9ea;
-	color: #666;
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-table tr:nth-child(even) {
-	background: #F5FAFA;
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1E90FF;
+    color: white;
 }
 
 span {
@@ -40,3 +45,13 @@ span {
 	font-size: 18px;
 	text-align:center
 }
+
+#pagination{
+
+	margin: 25px auto;
+	text-align: center;
+	width:800px;
+	
+	
+}
+
