@@ -1,4 +1,3 @@
-// var data = [];
 function submitKey() {
 	$.ajax({
 				"url" : "accessoires",
@@ -8,29 +7,26 @@ function submitKey() {
 					"obj" : $('#itemKey').val()
 				},
 				"dataType" : "json",
-				"beforeSend" : function() {// ajax处理之前出现spin图标
-					// alert('before...');
+				"beforeSend" : function() {
 					$('#th').empty();
 					$('#tb').empty();
 					$('#result').empty();
 					$('#pagination').empty();
 					$("#loading")
-							.append("<image src='img/loading.gif'></image>");
+							.append("<image src='../img/loading.gif'></image>");
 				},
 				"success" : function(items) {
 						$("#loading").empty();
                     					
 					if (items.length > 0) {
 						data = items;
-					    $("#th").append('<tr><th>Photo</th><th>Title</th><th>Price</th></tr>');
-//						alert(data.length);
+					    $("#th").append('<tr><th>Photo</th><th>Titre</th><th>Prix</th></tr>');
 						initUI(1, 5);
 
 					} else {
-						$("#result").append("<label>No result for "
+						$("#result").append("<label>Aucun résultat trouvé pour  "
 								+ $('#itemKey').val() + "</label>");
 					}
-//					$("#loading").empty();
 				}
 
 			});
@@ -48,7 +44,6 @@ function initUI(pageNo, pageSize) {
 	 $('#tb').empty();
 	for (var i = (pageNo - 1) * pageSize; i < pageNo * pageSize; i++) {
 		var item = data[i];
-		// html += '<li class="list-item">'+item+'</li>';
 		$('#tb')
 				.append('<tr><td>' + '<image src="' + item.photo + '"></image>'
 						+ '</td><td><a target= "_blank"' + ' href="'
