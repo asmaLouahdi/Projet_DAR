@@ -74,8 +74,8 @@
             html += '<a href="javascript:void(0);" class="page-index next" data-index="' + (cur + 1) + '">&gt;</a>';
         }
         html += '<span class="page-total">Total<span class="number">' + total + '</span>Pages</span>\
-          <span class="page-go">To<input class="w35 go" id="yeshu" type="text" value="">Page</span>\
-          <input type="button" id="go-search"  value="Submit">';
+          <span class="page-go">A<input class="w35 go" id="yeshu" type="text" value="">Page</span>\
+          <input type="button" id="go-search"  value="Soumettre">';
         tar.innerHTML = html;
         if(options.callback) {
             // 执行回调
