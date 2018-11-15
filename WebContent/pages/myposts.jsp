@@ -12,8 +12,7 @@
 <!-- Favicon -->
 
 <!-- Style CSS -->
-<link
-	href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/annonce.css">
 
@@ -150,8 +149,8 @@
 						<label class="champ" >
 	
 				<label class="fileContainer" id="file" ><input name="file" type="file" accept="image/*" >
-				Photos <i
-					class="icon-picture"></i> 
+				<i class="material-icons" style="color:#1E90FF">linked_camera</i>  Ajouter une photo
+
 				</label>
 				
 					
