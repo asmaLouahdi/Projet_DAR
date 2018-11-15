@@ -44,7 +44,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>Mes evénements</h2>
+						<h2>Mes evÃ©nements</h2>
 					</div>
 				</div>
 			</div>
@@ -248,6 +248,7 @@
 			<div class="modal-content">
 
 				<span onclick="fermer()" class="close">&times;</span>
+				<div style="width:100%;text-align:center;">
 				<form action="event" method="post" id="modifier">
 
 					<input type="hidden" name="action" value="update" /> <input
@@ -271,6 +272,7 @@
 
 					<button type="submit" id="update" value="Confirmer">Confirmer</button>
 				</form>
+				</div>
 				
 			</div>
 
