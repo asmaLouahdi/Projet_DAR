@@ -34,25 +34,28 @@ function afficher_form(){
 
 function display_events(events,id){
 	var i=0;
-	/*var id;
-	getId((data)=>{
-		
-		console.log(data);
-		id =data;
-		console.log(id);
-	});*/
-	console.log("idich"+id);
-
-	
+	var tmp;
+	var participant=0;
 	$('#events').empty();
-var event;
-var bool;
+	var event;
+	var bool;
 	while(i<events.length){
-		var avatar="../img/inconnu1.jpg";
 		var photo="../img/event.png";
-//var interesse="<a><span><button style='border:none;background-color:black;margin-top:10px;color:white;padding:5px;'>pas interess&eacute</button></span></a>";
+		var avatar="../img/inconnu1.jpg";
+
 		event=events[i];
+		while(tmp==event[1].event_id){
+			console.log("je passe");
+			i++;
+			if(i==events.length)
+				break;
+			event=events[i];
+		}
+		if(i==events.length)
+			break;
+		tmp=event[1].event_id;
 		bool=deja_interesse(events,id,event[1].event_id);
+		participant=nombre_participant(event,events,i);
 if(bool==true)
 	var interesse="<a><span><form action='event' method='post'>"+
 	"<input type='hidden' name='id' value='"+event[1].event_id+"' /><button style='border:none;background-color:black;margin-top:10px;color:white;padding:5px;' type='submit'  name='action' value='notIntrested'>"+
@@ -90,6 +93,7 @@ var interesse="<a><span><form action='event' method='post'>"+
 	         " Par <a href='#'>"+event[0].name+"</a>"+
 	        "</p>"+
 	        "<p> A "+event[1].location+"</p>"+
+		"<p>&nbsp; &nbsp; &nbsp;"+participant+" participants</p>"
 	        "</div>"+
 	        "<button class='button' onclick='myBtn(&quot;"+event[1].event_id+"&quot;,&quot;"+event[1].title+"&quot;,&quot;"+event[1].description+"&quot;,&quot;"+event[1].location+"&quot;)'>Modifier</button>"+
 	    	"<form action='event' method='post' style='display:inline;'onsubmit='return valider()'> "+
@@ -216,4 +220,19 @@ function getId(callback){
 		
 			}
 
-		
+/** *****compter le nombre de participant par event******* */
+function nombre_participant(event,events,i){
+				if(event[3]==null)
+					return 0;
+				var j=i;
+				var cpt=0;
+				var ev;
+				ev=events[i];
+				while((j<events.length)&&(ev[1]).event_id==event[1].event_id){
+				
+					cpt++;
+				j++;
+				ev=events[j];
+				}
+				return cpt;
+			}		
