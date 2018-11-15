@@ -90,7 +90,7 @@
 										<a href="#" data-animation="fadeInUp">Animalia</a>
 									</div>
 									<h2 data-animation="fadeInUp" data-delay="250ms">
-										<a href="single-post.html">Les êtres qui ne deçoivent
+										<a href="single-post.html">Les Ãªtres qui ne deÃ§oivent
 											jamais</a>
 									</h2>
 								</div>
@@ -208,7 +208,7 @@
 
 							<!-- Widget Area -->
 							<div class="sidebar-widget-area">
-								<h5 class="title">Catégories</h5>
+								<h5 class="title">CatÃ©gories</h5>
 								<div class="widget-content">
 									<ul class="tags">
 
@@ -363,12 +363,11 @@
 		<div class="modal-content">
 
 			<span onclick="fermer()" class="close">&times;</span>
-
+			<div style="width:100%;text-align:center;">
 			<form action="message" method="post" id="envoyer">
 				<div>
 
-					<img id="photo" width="50" height="50"><input id="user_name"
-						readonly>
+					<img id="photo" width="20%" height="20%"><input style="border:none;width:60%;padding:5px;" id="user_name" readonly>
 				</div>
 				<div>
 					<input id="pop_message" class="champ_pop" name="content"> <input
@@ -379,6 +378,7 @@
 				<button type="submit" id="update" value="Envoyer">Envoyer</button>
 
 			</form>
+			</div>
 		</div>
 	</div>
 	<!-- ##### Instagram Feed Area End ##### -->
