@@ -91,7 +91,7 @@
 										<a href="#" data-animation="fadeInUp">Animalia</a>
 									</div>
 									<h2 data-animation="fadeInUp" data-delay="250ms">
-										<a href="single-post.html">Les êtres qui ne deçoivent jamais</a>
+										<a href="single-post.html">Les Ãªtres qui ne deÃ§oivent jamais</a>
 									</h2>
 								</div>
 							</div>
@@ -135,7 +135,7 @@
 						<div class="col-12">
 							<div class="group">
 								<select id="annonce_categorie" name="categorie" >
-									<option>-selectionner une catégorie-</option>
+									<option>-selectionner une catÃ©gorie-</option>
 									<option value="chercher animal">chercher un animal</option>
 									<option value="proposer animal">proposer un animal</option>
 									<option value="chercher garde animaux">chercher garde
@@ -267,7 +267,7 @@
 
 							<!-- Widget Area -->
 							<div class="sidebar-widget-area">
-								<h5 class="title">Catégories</h5>
+								<h5 class="title">CatÃ©gories</h5>
 								<div class="widget-content">
 									<ul class="tags">
 
@@ -404,6 +404,7 @@
 			<div class="modal-content">
 
 				<span onclick="fermer()" class="close">&times;</span>
+				<div style="width:100%;text-align:center;">
 				<form action="annonce" method="post">
 
 					<input type="hidden" name="action" value="update" /> <input
@@ -427,6 +428,7 @@
 
 					<button type="submit" id="update" value="Confirmer">Confirmer</button>
 				</form>
+				</div>
 			</div>
 
 
