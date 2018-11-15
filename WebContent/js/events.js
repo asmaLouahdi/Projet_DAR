@@ -30,16 +30,23 @@ $.ajax({
 /** *************afficher les evenements ********** */
 function display_events(events,id){
 	var i=0;
-	
+	var tmp;
 	var participant=0;
 	$('#events').empty();
-var event;
-var bool;
+	var event;
+	var bool;
 	while(i<events.length){
 		var photo="../img/event.png";
 		var avatar="../img/inconnu1.jpg";
 
 		event=events[i];
+		while(tmp==event[1].event_id){
+			i++;
+			if(i==events.length)
+				break;
+			event=events[i];
+		}
+		tmp=event[1].event_id;
 		bool=deja_interesse(events,id,event[1].event_id);
 	participant=nombre_participant(event,events,i);
 if(bool==true)
@@ -163,7 +170,7 @@ function contacter(name,photo,id){
 			/** *****compter le nombre de participant par event******* */
 function nombre_participant(event,events,i){
 				console.log(event[1].event_id+"**"+event[2]);
-				if(event[2]==null)
+				if(event[3]==null)
 					return 0;
 				var j=i;
 				var cpt=0;
