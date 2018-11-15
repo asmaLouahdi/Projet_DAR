@@ -46,6 +46,8 @@ function display_events(events,id){
 				break;
 			event=events[i];
 		}
+		if(i==events.length)
+			break;
 		tmp=event[1].event_id;
 		bool=deja_interesse(events,id,event[1].event_id);
 	participant=nombre_participant(event,events,i);
