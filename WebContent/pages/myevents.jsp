@@ -6,14 +6,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- Title -->
-
-
-<!-- Favicon -->
-
-<link rel="icon" href="../img/core-img/favicon.ico">
 
 <!-- Style CSS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/annonce.css">
 
@@ -98,7 +93,8 @@
 						</div>
 					</div>
 					<label class="fileContainer" id="file">Photo <input
-						name="file" type="file" accept="image/*"></label>
+						name="file" type="file" accept="image/*"><i class="material-icons" style="color:#1E90FF">linked_camera</i>  Ajouter une photo
+</label>
 					<div class="col-12">
 						<button type="submit" class='button'>Publier</button>
 					</div>
