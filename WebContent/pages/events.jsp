@@ -59,7 +59,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content text-center">
-                        <h2>Evénements</h2>
+                        <h2>EvÃ©nements</h2>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                             <img src="../img/blog-img/4.jpg" alt="">
                             <div class="post-date">
                                 <a href="#">10 <span>march</span></a>
-                                 <a href="#"><span><button style='border:none;background-color:black;margin-top:10px;color:white;padding:5px;'>pas interessé</button></span></a>
+                                 <a href="#"><span><button style='border:none;background-color:black;margin-top:10px;color:white;padding:5px;'>pas interessÃ©</button></span></a>
                             </div>
                              
                         </div>
@@ -230,11 +230,11 @@
 			<div class="modal-content">
 
 				<span onclick="fermer()" class="close">&times;</span>
-				
+				<div style="width:100%;text-align:center;">
 				<form action="message" method="post" id="envoyer">
 				<div>
 				
-				<img id="photo" width="50" height="50"><input id="user_name" readonly>
+				<img id="photo" width="20%" height="20%"><input style="border:none;width:60%;padding:5px;" id="user_name" readonly>
 				</div>
 					<div>
 						<input id="pop_message" class="champ_pop" name="content">
@@ -245,6 +245,7 @@
 					<button type="submit" id="update" value="Envoyer">Envoyer</button>
 
 				</form>
+				</div>
 			</div>
 			</div>
     <!-- ##### Instagram Feed Area End ##### -->
